@@ -1,0 +1,24 @@
+/project-name
+├── .env                 # Atrof-muhit o'zgaruvchilari (DB_URL, PORT va boshqalar)
+├── node_modules/        # O'rnatilgan kutubxonalar
+├── prisma/
+│   └── schema.prisma    # Ma'lumotlar bazasi sxemasi
+├── public/              # Ochiq (public) papka, fayllar shu yerda saqlanadi
+│   ├── audio/
+│   ├── audioText/
+│   ├── caption/
+│   └── video/
+├── src/                 # Loyihaning asosiy kodi
+│   ├── controllers/
+│   │   └── fileController.js # API so'rovlarini boshqarish logikasi
+│   ├── routes/
+│   │   ├── fileRoutes.js     # API endpointlari (yo'llar)
+│   │   └── index.js          # Barcha yo'llarni birlashtiruvchi fayl
+│   ├── services/
+│   │   └── fileService.js    # Faylga oid biznes logikasi (masalan, faylni o'chirish)
+│   ├── utils/
+│   │   ├── prisma.js         # Prisma klientini eksport qilish
+│   │   └── fileHandler.js    # Fayl yuklash konfiguratsiyasi (Multer)
+│   └── app.js                # Serverni ishga tushiruvchi asosiy fayl
+├── package.json         # Loyiha haqida ma'lumotlar va kutubxonalar ro'yxati
+└── .gitignore           # Gitga qo'shilmaydigan fayllar ro'yxati

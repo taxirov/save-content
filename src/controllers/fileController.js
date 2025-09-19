@@ -55,9 +55,29 @@ const saveAudio = (req, res) => saveFile(req, res, 'audio');
 const saveCaption = (req, res) => saveFile(req, res, 'caption');
 const saveVideo = (req, res) => saveFile(req, res, 'video');
 
+const getData = async (req, res) => {
+  try {
+    const { id } = req.params
+    if (!id) { res.status(403).json({ message: "paramsda id bo'lishi kerak" }) }
+    else {
+      const product = await prisma.product.findUnique({ where: { productId: id } })
+      if (product) {
+        res.status(200).json(product)
+      } else {
+        res.status(404).json({ message: "product not found" })
+      }
+    }
+
+  }
+  catch (error) {
+    res.json({ message: "Internal Server Error", error })
+  }
+}
+
 module.exports = {
   saveAudioText,
   saveAudio,
   saveCaption,
   saveVideo,
+  getData
 };

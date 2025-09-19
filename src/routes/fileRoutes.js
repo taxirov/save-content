@@ -7,7 +7,7 @@ router.post('/audioText/:productId', uploadFile('audioText').single('file'), fil
 router.post('/audio/:productId', uploadFile('audio').single('file'), fileController.saveAudio);
 router.post('/caption/:productId', uploadFile('caption').single('file'), fileController.saveCaption);
 router.post('/video/:productId', uploadFile('video').single('file'), fileController.saveVideo);
-router.post('/videoCaption/:id', uploadFile('videoCaption').single('file'), fileController.saveVideoCation)
+router.post('/videoCaption/:productId', uploadFile('videoCaption').single('file'), fileController.saveVideoCation)
 router.get('/:id', fileController.getData)
 
 module.exports = router;

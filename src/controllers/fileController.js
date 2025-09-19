@@ -54,6 +54,7 @@ const saveAudioText = (req, res) => saveFile(req, res, 'audioText');
 const saveAudio = (req, res) => saveFile(req, res, 'audio');
 const saveCaption = (req, res) => saveFile(req, res, 'caption');
 const saveVideo = (req, res) => saveFile(req, res, 'video');
+const saveVideoCation = (req, res) => saveFile(req, res, 'videoCaption');
 
 const getData = async (req, res) => {
   try {
@@ -79,5 +80,6 @@ module.exports = {
   saveAudio,
   saveCaption,
   saveVideo,
+  saveVideoCation,
   getData
 };
